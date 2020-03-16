@@ -14,9 +14,12 @@ class Entries {
         .getEntries()
         .then(entries => {
         
-            entries.forEach(entry => this.entries.push(new Entry(entry)))
             
-            //we take entries from server and iterate ovver that array. as we iterate we push that container on the entries prperty. 
+            entries.forEach(entry => this.entries.push(new Entry(entry)))
+            console.log(this.entries)
+        
+            
+            //we take entries from server and iterate over that array. as we iterate we push that container on the entries prperty. 
             // console.log(this.entries)
         })
         .then(() => {
