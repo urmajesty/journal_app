@@ -36,7 +36,7 @@ class EntriesController < ApplicationController
 
     private
         def entry_params
-            params.requre(:entry).permit(:body)
+            params.require(:entry).permit(:body)
         end
 end
 

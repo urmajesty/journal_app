@@ -3,19 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/style.css"
     <title>My Journal</title>
 </head>
 <body>
     <div class="container">
         <h1>My Journal</h1>
-    <form id="new-journal-entry-form">
-        <input type="text" />
-        <input type="submit" />
-    </form>
-    <div id="journal-entry-container">
+        <div id="new-entry-container">
+            <form id="new-journal-entry-form">
+             <input type="text" name="entry-body" id="new-entry-body"/>
+             <input type="submit" value="Save Journal Entry" />
+            
+            </form>
+        </div>
+        <div id="entries-content">
+            <div id="journal-entries-container">
+                
+
+            </div>
+            <div id="entry-show">
 
             </div>
         </div>
+    </div>
+    </div>
         <script type="text/javascript" src="src/components/entry.js"></script>
         <script src="src/components/entries.js"></script>
         <script src="src/components/app.js"></script>
