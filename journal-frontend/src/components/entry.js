@@ -6,8 +6,17 @@
     }
 //establish id and body property
 
+    // renderLi() {
+    // return `<li data-id=${this.id}>${this.body}</li>
+    // <button data-id=${this.id} class="delete">Delete</button> `
+
     renderLi() {
-    return `<li data-id=${this.id}>${this.body}</li>
-    <button data-id=${this.id} class="delete">Delete</button> `
+    return `<div id="entry-${this.id}">
+    <li>${this.body}</li>
+    <button class="delete" data-id="${this.id}">Delete</button>
+    </div>
+  `
+
     }
 }
+    

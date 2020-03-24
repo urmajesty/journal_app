@@ -31,7 +31,7 @@ class EntriesController < ApplicationController
         @entry = Entry.find(params[:id])
         @entry.delete
 
-        render json:{entryId: @entry.id}
+        
     end
 
     private

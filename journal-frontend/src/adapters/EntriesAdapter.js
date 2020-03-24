@@ -53,7 +53,7 @@ class EntriesAdapter {
         const entry = {
             body: value,
         }
-        
+       
         return fetch(`${this.baseUrl}/${id}`, {
             method: 'PATCH',
             headers: {
