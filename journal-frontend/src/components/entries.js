@@ -54,17 +54,14 @@ class Entries {
 
         let configObj = {
         method: "DELETE",
-        headers: {
+        cdheaders: {
         "Content-Type": "application/json",
         // Accepts: "application/json"
       }
     }
 
     let id = e.target.dataset.id
-    console.log(`${id}`)
-    console.log(id)
-    console.log(this.id)
-    console.log(`${this.id}`)
+    
     
     fetch(`http://localhost:3000/entries/${id}`, configObj)
       .then(function(){
