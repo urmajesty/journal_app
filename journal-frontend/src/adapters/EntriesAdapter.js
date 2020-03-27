@@ -68,8 +68,8 @@ class EntriesAdapter {
         const entry = {
             body: value,
         }
-       
-        return fetch(`${this.baseUrl}/${id}`, {
+        let dataId = this.getElementById('data-id')
+        return fetch(`http://localhost:3000/entries/${dataId}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
