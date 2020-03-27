@@ -11,7 +11,7 @@
     // <button data-id=${this.id} class="delete">Delete</button> `
 
     renderLi() {
-    return `<div id="entry-${this.id}">
+    return `<div data-id="entry-${this.id}">
     <li>${this.body}</li>
     <button class="delete" data-id="${this.id}">Delete</button>
     </div>

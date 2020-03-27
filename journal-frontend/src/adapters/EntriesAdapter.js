@@ -47,9 +47,24 @@ class EntriesAdapter {
     //     element.remove()
     //     console.log("removed")
     // }
+    // deleteEntry(value, id) {
+    //         const configObj = {
+    //             body: value,
+    //         }
+    //     return fetch(`http://localhost:3000/entries/${id}`, configObj, {
+    //         method: "DELETE",
+    //         headers: {
+    //         "Content-Type": "application/json",
+    //         // Accepts: "application/json"
+    //     }}).then(console.log)
+    // }
+    
+    
+     
 
 
     updateEntry(value, id) {
+        console.log()
         const entry = {
             body: value,
         }

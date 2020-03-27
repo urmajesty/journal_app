@@ -16,14 +16,41 @@ class Entries {
         this.entryForm = document.getElementById("new-affirmations-entry-form")
         // this.entryForm.addEventListener('submit', this.createEntry)
         this.entryForm.addEventListener('submit', this.createEntry.bind(this))
+        // this.entriesContainer.addEventListener('click', this.handleClickOnEntriesContainer.bind(this))
         this.entriesContainer.addEventListener('dblclick', this.handleEditClick.bind(this))
         this.entriesContainer.addEventListener('blur', this.updateEntry.bind(this), true)
         this.entriesContainer.addEventListener('click', this.deleteEntry.bind(this));
+        // this.entriesContainer.addEventListener('dbclick', this.handleDoubleClick.bind(this))
+        // this.entriesContainer.addEventListener('unblur', this.handleCompleteEdit.bind(this))
         // const deleteButton = document.createElement("button");
         this.entries
     
         
     }   
+
+    handleClickOnEntriesContainer(event){
+        console.log(event.target.className)
+        if (event.target.className == "delete"){
+            //this executes
+            let id = event.target.dataset.id
+            this.deleteEntry(id)
+        } 
+        
+    }
+
+    // handleDoubleClick(event){
+    //     //is the event target a text tag?
+    //     console.log(event.target.tagName)
+    //     //if so, open up the text field to be edited
+    //     let id = event.target.dataset.id
+    //     this.handleEditClick(id)
+    // }
+
+    // handleCompleteEdit(event){
+    //     //is the event target unblur a text tag?
+    //     //if so, run your update
+
+    // }
     
 
     createEntry(e) {
@@ -48,38 +75,39 @@ class Entries {
     //     deleteButton.classList.add("delete");
     //     element.appendChild(deleteButton);
     // }
-    deleteEntry(e) {
+    deleteEntry() {
 
-        if (e.target.className = "delete"){
-
-        let configObj = {
-        method: "DELETE",
-        cdheaders: {
-        "Content-Type": "application/json",
-        // Accepts: "application/json"
-      }
+        let dataId = this.getElementById('data-id')
+    
+        fetch(`http://localhost:3000/entries/${dataId}`, {
+            method: 'DELETE'
+          })
+          .then(resp => resp.json())
+          .then(json => {
+              let journalEntry = document.querySelector(`.delete[data-id="${dataId}"]`) 
+              journalEntry.remove()
+          })
     }
+    
+    
+    // fetch(`http://localhost:3000/entries/${id}`, configObj) {
 
-    let id = e.target.dataset.id
-    
-    
-    fetch(`http://localhost:3000/entries/${id}`, configObj)
-      .then(function(){
+    //     .then(console.log)
+    // }
       
-      })
-      
-    let element = document.getElementById(`entry-${id}`)
-    console.log(`entry-${id}`)
-    element.remove()
+    // let element = document.getElementById(`entry-${id}`)
+    // console.log(`entry-${id}`, "removing entry")
+    // element.remove()
+    
  
-  }
-}
-    handleEditClick (e) {
-        this.toggleEntry(e)
+    //  }
+
+    handleEditClick (id) {
+        this.toggleEntry(event)
     }
 
-        toggleEntry(e) {
-        const li = e.target
+        toggleEntry(event) {
+        const li = event.target
         //makes li editable 
         li.contentEditable="true"
         li.focus()
