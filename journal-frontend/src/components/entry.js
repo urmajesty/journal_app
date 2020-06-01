@@ -4,17 +4,18 @@
     this.id = entryJSON.id
     this.body = entryJSON.body
     }
-//establish id and body property
 
-    // renderLi() {
-    // return `<li data-id=${this.id}>${this.body}</li>
-    // <button data-id=${this.id} class="delete">Delete</button> `
 
     renderLi() {
     return `<div data-id="entry-${this.id}">
     <li>${this.body}</li>
+    
     <button class="delete" data-id="${this.id}">Delete</button>
-    </div>
+    <div>
+    
+    <button class="likes" data-id="${this.id}">Like</button>
+    <span class="count">0</span>
+  </div></div>
   `
 
     }

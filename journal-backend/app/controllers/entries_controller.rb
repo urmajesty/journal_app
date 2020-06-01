@@ -13,6 +13,7 @@ class EntriesController < ApplicationController
 
     def create
         @entry = Entry.create(entry_params)
+        # @user = User.find_by(user: params[:user])
         # @entry = Entry.new
         # if @entry.save
 
@@ -20,23 +21,21 @@ class EntriesController < ApplicationController
     end
 
     def update
-        @entry = Entry.find(params[:id])
-        @entry.update(entry_params)
-        # if @entry.update 
-        render json: @entry, status: 200
-        # else render error
+        @entry = Entry.find_by(params[:id])
+        @entry.likes << Like.new
+        render json: {likes_count: @entry.likes.length}
+      
     end
+
 
     def destroy
         @entry = Entry.find(params[:id])
         @entry.delete
-
-        
     end
 
     private
         def entry_params
-            params.require(:entry).permit(:body)
+            params.require(:entry).permit(:body, :likes)
         end
 end
 

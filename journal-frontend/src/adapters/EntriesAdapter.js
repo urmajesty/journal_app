@@ -16,6 +16,7 @@ class EntriesAdapter {
     createEntry(value) { 
         const entry = {
             body: value,
+            
         }
        
         return fetch(this.baseUrl,{
@@ -24,26 +25,31 @@ class EntriesAdapter {
                 'content-type': 'application/json',
             },
             body:JSON.stringify({entry}),
+    
         })
         .then(res => res.json())
     }
 
+  
+
     
 
-    updateEntry(value, id) {
-        console.log()
-        const entry = {
-            body: value,
-        }
-        let dataId = this.getElementById('data-id')
-        return fetch(`http://localhost:3000/entries/${dataId}`, {
-            method: 'PATCH',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body:JSON.stringify({ entry }),
-        }).then(res => res.json())
-    }
+//     updateEntry(value, id) {
+//         console.log()
+//         const entry = {
+//             body: value,
+           
+//         }
+        
+//         return fetch(`http://localhost:3000/entries/${id}`, {
+//             method: 'PATCH',
+//             headers: {
+//                 'content-type': 'application/json',
+//             },
+//             body:JSON.stringify({ entry }),
+           
+//         }).then(res => res.json())
+//     }
 }
 
 

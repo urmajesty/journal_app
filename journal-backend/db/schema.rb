@@ -10,12 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_12_165725) do
+ActiveRecord::Schema.define(version: 2020_06_01_075611) do
 
   create_table "entries", force: :cascade do |t|
     t.string "body"
+    t.integer "likes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.integer "count", default: 0
+    t.integer "entry_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["entry_id"], name: "index_likes_on_entry_id"
+  end
+
+  add_foreign_key "likes", "entries"
 end
