@@ -4,7 +4,48 @@
     padding: 20px;
 }
 
+/* body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background: white;
+    font-family: sans-serif;
+    color: #eee;
+    transition: background .3s;
+}
+
+.blue {
+    background: #1989AC;
+}
+
+button {
+    display: block;
+    border: 0;
+    background: none;
+    padding: 20px 40px;
+    color: #888;
+    font-family: inherit;
+    font-size: 18px;
+    background-color: white;
+    border-radius: 150px;
+    cursor: pointer;
+    border: 4px solid #888;
+
+    transition: .3s;
+}
+
+button:not(:last-of-type) {
+    margin-bottom: 20px;
+}
+
+button:hover {
+    border-color: black;
+    color: black;
+}
 
 
-
-
+ */ */
