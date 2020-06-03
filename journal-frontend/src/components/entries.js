@@ -6,10 +6,7 @@ class Entries {
         this.adapter = new EntriesAdapter()
         
         this.initEventListeners()
-        this.fetchAndRenderEntries()
-        
-       
-       
+        this.fetchAndRenderEntries()   
     }
 
     initEventListeners() {
@@ -19,11 +16,11 @@ class Entries {
         this.entryForm = document.getElementById("new-affirmations-entry-form")
         this.entryForm.addEventListener('submit', this.createEntry.bind(this))
         this.entries
-        
-        
+      
+   
+           
+    }
     
-        
-    }   
     
     
     createEntry(e) {
@@ -38,6 +35,7 @@ class Entries {
             this.render()
         })
     }    
+       
     
  
     deleteEntry(e) {
@@ -153,8 +151,7 @@ class Entries {
             this.render()
         })
     }
-    
-
+   
 
     render() {
         
@@ -168,7 +165,13 @@ class Entries {
         })
         
     }
+    
+
+       
+    
 }
+
+
         
 
 // 
