@@ -10,18 +10,69 @@ class Entries {
     }
 
     initEventListeners() {
+
         this.entriesContainer = document.getElementById('affirmations-entries-container')
         this.body = document.querySelector('body')
         this.newEntryBody = document.getElementById("new-entry-body")
         this.entryForm = document.getElementById("new-affirmations-entry-form")
         this.entryForm.addEventListener('submit', this.createEntry.bind(this))
+        this.searchForm = document.getElementById("search_form")
+        this.searchForm.addEventListener('keyup', this.search.bind(this))
+        
+    
+
         this.entries
       
    
            
     }
     
+
+    search(e) {
+        // e.preventDefault
+        let input = e.target.value.toLowerCase().trim()
+        let affs = document.getElementsByClassName('searching')
+
+        const li = document.getElementById('data-id')
+        li.contentEditable="false"
+        li.classList.remove('edit')
+        const newValue = li.innerHTML
+        const id = li.dataset.id
+        
+//         return `${items.customerId}`
+//   .toLowerCase()
+//   .includes(event.target.value.toLowerCase());
+       
+       
     
+        
+       
+          
+        // console.log(e.target.value)
+        // let input = e.target.value.toLowerCase()
+    
+        // input=input.toLowerCase()
+        // let x = document.getElementsByClassName('searching')[0].innerText
+        // console.log(document.getElementsByClassName('searching')[0].innerHTML)
+        // console.log(x)
+
+        
+        // for (var i = 0; i < x.length; i++) {  
+        //     console.log(x.length)
+        //     if (!x[i].toLowerCase().includes(input)) { 
+               
+        //         x[i].style.display="none"
+        //     // x[i].style.display="list-item";
+        //         }
+        //     // x[i].style.display="none"; 
+        // // } 
+        // else { 
+        //     x[i].style.display="list-item";              
+        //     } 
+        // }
+
+    }
+
     
     createEntry(e) {
         
@@ -46,7 +97,7 @@ class Entries {
 
             let configObj = {
                 method: "DELETE",
-                headers: {
+                cdheaders: {
                 "Content-Type": "application/json",    
                 }
             }
@@ -60,6 +111,7 @@ class Entries {
             })
       
             let element = e.target.parentElement
+            
             element.remove()
 
         } 

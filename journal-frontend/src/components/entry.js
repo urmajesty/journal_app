@@ -8,7 +8,7 @@
 
     renderLi() {
     return `<div data-id="entry-${this.id}">
-    <li>${this.body}</li>
+    <li class="searching"> ${this.body}</li>
     
     <button class="delete" data-id="${this.id}">Delete</button>
     <div>
